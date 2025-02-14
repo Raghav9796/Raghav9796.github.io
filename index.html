@@ -10,43 +10,28 @@
 <body>
 <div id="particles-js"></div>
 <header>
-    <h1>Your Name</h1>
-    <p>Software Developer | AI Enthusiast</p>
+    <h1>Raghav Poddar</h1>
 </header>
 
-<nav>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
-</nav>
-
-<section id="about">
-    <h2>About Me</h2>
-    <p>A brief introduction about yourself and your skills.</p>
-</section>
-
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="project">
-        <h3>Project 1</h3>
-        <p>Description of your project.</p>
-    </div>
-    <div class="project">
-        <h3>Project 2</h3>
-        <p>Description of another project.</p>
-    </div>
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>LinkedIn: <a href="#">yourprofile</a></p>
-</section>
+<div class="dropdown-container">
+    <select onchange="location = this.value;">
+        <option value="" disabled selected>Select a page</option>
+        <option value="#about">About</option>
+        <option value="#projects">Projects</option>
+        <option value="#contact">Contact</option>
+    </select>
+</div>
 
 <footer>
-    <p>&copy; 2025 Your Name. All rights reserved.</p>
+    <div class="contact-tab">
+        <a href="mailto:raghavp005@gmail.com">
+            <img src="assets/email.jpg" alt="Email" width="40">
+        </a>
+        <a href="https://www.linkedin.com/in/raghav-poddar-750a91299/" target="_blank">
+            <img src="assets/LinkedIn.png" alt="LinkedIn" width="40">
+        </a>
+    </div>
+    <p>&copy; 2025 Raghav Poddar.</p>
 </footer>
 
 <script>
