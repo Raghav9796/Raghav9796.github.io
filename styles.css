@@ -1,7 +1,11 @@
+/* styles.css */
+html, body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
     text-align: center;
     background-color: black;
     color: white;
@@ -17,33 +21,31 @@ body {
 header {
     padding: 20px;
 }
-nav ul {
-    list-style: none;
-    padding: 0;
+.dropdown-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-}
-section {
-    padding: 20px;
-}
-.project {
-    border: 1px solid #ccc;
+.styled-dropdown {
+    width: 300px;
     padding: 10px;
-    margin: 10px auto;
-    width: 50%;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.1);
+    font-size: 16px;
+    background-color: black;
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
 }
 footer {
+    margin-top: auto;
     background-color: black;
-    padding: 10px;
-    position: relative;
+    padding: 20px;
     width: 100%;
+}
+.contact-tab {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
 }
