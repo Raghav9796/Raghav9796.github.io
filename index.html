@@ -6,15 +6,17 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
 <div id="particles-js"></div>
+
 <header>
     <h1>Raghav Poddar</h1>
 </header>
 
 <div class="dropdown-container">
-    <select class="styled-dropdown" onchange="location = this.value;">
+    <select class="styled-dropdown">
         <option value="" disabled selected>Navigation Bar</option>
         <option value="#about">About</option>
         <option value="#projects">Projects</option>
@@ -22,27 +24,39 @@
     </select>
 </div>
 
+<div id="content-sections">
+    <section id="about" class="section-content">
+        <h2>About Me</h2>
+        <div class="content-box">
+            <p>I'm a passionate developer with expertise in web development and software engineering.
+                I love creating intuitive and engaging user experiences.</p>
+        </div>
+    </section>
 
-<script>
-    particlesJS("particles-js", {
-        particles: {
-            number: { value: 100 },
-            size: { value: 3 },
-            color: { value: "#878787" },
-            line_linked: {
-                enable: true,
-                distance: 150,
-                color: "#878787",
-                opacity: 0.5,
-                width: 1
-            },
-            move: {
-                enable: true,
-                speed: 3
-            }
-        }
-    });
-</script>
+    <section id="projects" class="section-content">
+        <h2>Projects</h2>
+        <div class="content-box">
+            <div class="project">
+                <h3>Data Analytics</h3>
+                <p>will add info later</p>
+            </div>
+            <div class="project">
+                <h3>Research paper</h3>
+                <p>will add info later</p>
+            </div>
+            <div class="project">
+                <h3>Data Visualisation and Sonification</h3>
+                <p>will add later</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section-content">
+        <h2>Contact</h2>
+        <div class="content-box">
+            <p>Feel free to reach out to me at: Raghavp005@gmail.com</p>
+        </div>
+    </section>
+</div>
 </body>
 </html>
-
