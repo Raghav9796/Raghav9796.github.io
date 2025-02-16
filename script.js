@@ -192,31 +192,25 @@ function openModal(projectId) {
 
     const project = projectDetails[projectId];
     if (project) {
-        // Set title
         document.getElementById('modal-title').innerText = project.title;
 
-        // Populate images section (assumes exactly two images)
         const imagesContainer = document.getElementById('modal-images');
         imagesContainer.innerHTML = project.images.map(img =>
             `<img src="${img}" alt="${project.title}" class="modal-image">`
         ).join('');
 
-        // Set description
         document.getElementById('modal-description').innerText = project.description;
 
-        // Populate technologies bubbles
         const techContainer = document.getElementById('modal-technologies');
         techContainer.innerHTML = project.technologies.map(tech =>
             `<span class="tech-bubble">${tech}</span>`
         ).join(' ');
 
-        // Populate key features list
         const featuresContainer = document.getElementById('modal-key-features');
         featuresContainer.innerHTML = project.features.map(feature =>
             `<li>${feature}</li>`
         ).join('');
 
-        // Display the modal
         document.getElementById('modal').style.display = 'block';
     }
 }
@@ -225,9 +219,17 @@ function closeModal() {
     document.getElementById('modal').style.display = 'none';
 }
 
-// Setup event listeners to close the modal
 document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.project').forEach(project => {
+        project.addEventListener('click', function() {
+            const projectId = this.getAttribute('data-project-id');
+            console.log("Clicked project id:", projectId);
+            openModal(projectId);
+        });
+    });
+
     document.querySelector('.close-button').addEventListener('click', closeModal);
+
     window.addEventListener('click', (event) => {
         const modal = document.getElementById('modal');
         if (event.target === modal) {
