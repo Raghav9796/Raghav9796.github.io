@@ -146,8 +146,7 @@ const initializeEventListeners = () => {
 // Run initialization when DOM is loaded
 document.addEventListener('DOMContentLoaded', initializeEventListeners);
 
-
-function openProjectDetail(projectId) {
+function openModal(projectId) {
     const projectDetails = {
         "data-analytics": {
             title: "Data Analytics",
@@ -173,24 +172,32 @@ function openProjectDetail(projectId) {
 
     const project = projectDetails[projectId];
     if (project) {
-        let newWindow = window.open("", "_blank", "width=800,height=600");
-        newWindow.document.write(`
-            <html>
-            <head>
-                <title>${project.title}</title>
-                <style>
-                    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #111; color: white; }
-                    img { max-width: 80%; margin: 10px; border-radius: 8px; }
-                    h2 { color: #ffffff; }
-                    p { font-size: 1.2em; }
-                </style>
-            </head>
-            <body>
-                <h2>${project.title}</h2>
-                <p>${project.description}</p>
-                ${project.images.map(img => `<img src="${img}" alt="${project.title}">`).join('')}
-            </body>
-            </html>
-        `);
+        // Populate modal content
+        document.getElementById('modal-title').innerText = project.title;
+        document.getElementById('modal-description').innerText = project.description;
+        const imagesContainer = document.getElementById('modal-images');
+        imagesContainer.innerHTML = project.images.map(img =>
+            `<img src="${img}" alt="${project.title}" style="max-width: 100%; margin: 10px; border-radius: 8px;">`
+        ).join('');
+
+        // Display modal
+        document.getElementById('modal').style.display = 'block';
     }
 }
+
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
+
+// Close modal when clicking the close button
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('.close-button').addEventListener('click', closeModal);
+
+    // Close modal when clicking outside the modal content
+    window.addEventListener('click', (event) => {
+        const modal = document.getElementById('modal');
+        if (event.target === modal) {
+            closeModal();
+        }
+    });
+});

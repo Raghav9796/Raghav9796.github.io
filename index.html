@@ -35,20 +35,20 @@
 
     <section id="projects" class="section-content">
         <h2>Projects</h2>
-        <div class="content-box" onclick="openProjectDetail('data-analytics')">
+        <div class="content-box" onclick="openModal('data-analytics')">
             <div class="project">
                 <h3>Data Analytics</h3>
                 <p>will add info later</p>
             </div>
-            <div class="project" onclick="openProjectDetail('research-paper')">
+            <div class="project" onclick="openModal('research-paper')">
                 <h3>Research paper</h3>
                 <p>will add info later</p>
             </div>
-            <div class="project" onclick="openProjectDetail('data-viz')">
+            <div class="project" onclick="openModal('data-viz')">
                 <h3>Data Visualisation and Sonification</h3>
                 <p>will add later</p>
             </div>
-            <div class="project" onclick="openProjectDetail('personal-website')">
+            <div class="project" onclick="openModal('personal-website')">
                 <h3>Personal website</h3>
                 <p>will add later</p>
             </div>
@@ -61,6 +61,14 @@
             <p>Feel free to reach out to me at: Raghavp005@gmail.com</p>
         </div>
     </section>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title"></h2>
+            <p id="modal-description"></p>
+            <div id="modal-images"></div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
