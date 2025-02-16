@@ -1,4 +1,3 @@
-// Particle.js configuration
 const particlesConfig = {
     particles: {
         number: {
@@ -146,3 +145,52 @@ const initializeEventListeners = () => {
 
 // Run initialization when DOM is loaded
 document.addEventListener('DOMContentLoaded', initializeEventListeners);
+
+
+function openProjectDetail(projectId) {
+    const projectDetails = {
+        "data-analytics": {
+            title: "Data Analytics",
+            description: "An advanced data analytics project involving predictive modeling.",
+            images: ["analytics1.jpg", "analytics2.jpg"]
+        },
+        "research-paper": {
+            title: "Research Paper",
+            description: "A comparative study of Canny and Marr-Hildreth edge detection algorithms.",
+            images: ["paper1.jpg", "paper2.jpg"]
+        },
+        "data-viz": {
+            title: "Data Visualization and Sonification",
+            description: "A project integrating visual and auditory representation of data using D3.js and Tone.js.",
+            images: ["viz1.jpg", "viz2.jpg"]
+        },
+        "personal-website": {
+            title: "Personal Website",
+            description: "My portfolio website showcasing my work in software engineering.",
+            images: ["website1.jpg", "website2.jpg"]
+        }
+    };
+
+    const project = projectDetails[projectId];
+    if (project) {
+        let newWindow = window.open("", "_blank", "width=800,height=600");
+        newWindow.document.write(`
+            <html>
+            <head>
+                <title>${project.title}</title>
+                <style>
+                    body { font-family: Arial, sans-serif; text-align: center; padding: 20px; background-color: #111; color: white; }
+                    img { max-width: 80%; margin: 10px; border-radius: 8px; }
+                    h2 { color: #ffffff; }
+                    p { font-size: 1.2em; }
+                </style>
+            </head>
+            <body>
+                <h2>${project.title}</h2>
+                <p>${project.description}</p>
+                ${project.images.map(img => `<img src="${img}" alt="${project.title}">`).join('')}
+            </body>
+            </html>
+        `);
+    }
+}
