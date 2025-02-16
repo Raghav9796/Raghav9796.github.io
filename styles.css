@@ -181,3 +181,15 @@ p {
 #modal-key-features li {
     margin-bottom: 10px;
 }
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain; /* Ensures the images maintain their aspect ratio */
+    transition: transform 0.3s ease;
+    filter: invert(1); /* Adjusts icon color for dark backgrounds */
+}
+
+#modal-description {
+    text-align: left;
+}

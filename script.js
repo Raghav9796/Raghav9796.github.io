@@ -150,23 +150,35 @@ function openModal(projectId) {
     const projectDetails = {
         "data-analytics": {
             title: "Data Analytics",
-            description: "An advanced data analytics project involving predictive modeling.",
+            description: "• Utilized Python for data preprocessing, sentiment analysis, and report generation.\n" +
+                "• Applied natural language processing (NLP) techniques to analyse email text and\n" +
+                "extract sentiment and behavioural insights.\n" +
+                "• Generated visual summaries and  insights regarding employee\n" +
+                "communication patterns.\n" +
+                "• Demonstrated the ability to utilise large datasets and perform meaningful analysis\n" +
+                "to support decision-making.",
             images: ["analytics1.jpg", "analytics2.jpg"],
-            technologies: ["Python", "Pandas", "NumPy", "Matplotlib"],
-            features: ["Data cleaning", "Predictive modeling", "Interactive dashboards"]
+            technologies: ["Python", "Pandas", "NumPy", "NLP", "SQL"],
+            features: ["Data cleaning", "Visualisation", "Data insights"]
         },
         "research-paper": {
             title: "Research Paper",
-            description: "A comparative study of edge detection algorithms.",
+            description: "• Created a custom dataset of 125 images, adjusting contrast and noise levels to test the robustness of both algorithms.\n" +
+                "• Evaluated the algorithms using 3 key metrics: Mean Squared Error (MSE), Structural Similarity Index (SSIM), and Peak Signal-to-Noise Ratio (PSNR).\n" +
+                "• Assessed the accuracy, computational efficiency, and resilience of each algorithm under varying conditions.\n" +
+                "• Highlighted strengths and weaknesses of each algorithm in real-world image processing applications",
             images: ["paper1.jpg", "paper2.jpg"],
-            technologies: ["MATLAB", "OpenCV", "LaTeX"],
+            technologies: ["Python", "OpenCV", "Excel"],
             features: ["Edge detection", "Performance evaluation", "Algorithm comparison"]
         },
         "data-viz": {
-            title: "Data Visualization and Sonification",
-            description: "A project integrating visual and auditory representation of data.",
+            title: "Data Visualization and Sonification (Team Development)",
+            description: "I'm contributing to our team project by focusing on NASA’s meteor landing dataset." +
+                " My work involves crafting interactive visualizations and sonification components that highlight the data's impact events." +
+                " Meanwhile, my teammates are integrating their respective modules so that, together, we create a comprehensive sonic and visual dashboard. " +
+                "This platform will empower users to build and customize their own models, offering a unique, multi-sensory data exploration experience.",
             images: ["viz1.jpg", "viz2.jpg"],
-            technologies: ["D3.js", "Tone.js", "JavaScript"],
+            technologies: ["Plotly", "Dash", "Python", "javascript", "D3.js"],
             features: ["Interactive charts", "Real-time sonification", "Responsive design"]
         },
         "personal-website": {
