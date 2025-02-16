@@ -133,6 +133,7 @@ const handleNavigation = () => {
             }
         });
     };
+    handleResize();
 };
 
 // Add resize handler to recalculate positions if window is resized
@@ -141,7 +142,6 @@ const handleNavigation = () => {
 // Initialize all event listeners
 const initializeEventListeners = () => {
     handleNavigation();
-    handleResize();
 };
 
 // Run initialization when DOM is loaded
