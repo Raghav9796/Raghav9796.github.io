@@ -123,19 +123,20 @@ const handleNavigation = () => {
             selectedSection.style.opacity = '1';
         }, 500);
     });
+    const handleResize = () => {
+        window.addEventListener('resize', () => {
+            const currentSection = document.querySelector('.section-content[style*="display: block"]');
+            if (currentSection) {
+                const dropdownContainer = document.querySelector('.dropdown-container');
+                const shiftDistance = calculateShiftDistance(currentSection);
+                dropdownContainer.style.transform = `translateY(${shiftDistance}px)`;
+            }
+        });
+    };
 };
 
 // Add resize handler to recalculate positions if window is resized
-const handleResize = () => {
-    window.addEventListener('resize', () => {
-        const currentSection = document.querySelector('.section-content[style*="display: block"]');
-        if (currentSection) {
-            const dropdownContainer = document.querySelector('.dropdown-container');
-            const shiftDistance = calculateShiftDistance(currentSection);
-            dropdownContainer.style.transform = `translateY(${shiftDistance}px)`;
-        }
-    });
-};
+
 
 // Initialize all event listeners
 const initializeEventListeners = () => {
@@ -223,7 +224,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.project').forEach(project => {
         project.addEventListener('click', function() {
             const projectId = this.getAttribute('data-project-id');
-            console.log("Clicked project id:", projectId);
             openModal(projectId);
         });
     });
