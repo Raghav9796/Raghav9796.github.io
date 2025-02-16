@@ -131,28 +131,53 @@ p {
     background-color: rgba(0, 0, 0, 0.8); /* Black w/ opacity */
 }
 
-/* Modal Content */
+/* Updated Modal Content for a larger display */
 .modal-content {
     background-color: #222;
-    margin: 10% auto; /* 10% from the top and centered */
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
-    max-width: 800px;
+    width: 90%;
+    max-width: 1000px;
     border-radius: 10px;
     text-align: center;
     position: relative;
 }
 
-/* Close Button */
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+/* Image container: display two images side by side */
+#modal-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
 }
-.close-button:hover,
-.close-button:focus {
+
+/* Style for the images in the modal */
+.modal-image {
+    max-width: 45%;
+    border-radius: 8px;
+}
+
+/* Technologies section styling */
+#modal-technologies {
+    margin: 20px 0;
+}
+.tech-bubble {
+    display: inline-block;
+    background-color: #444;
     color: #fff;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+/* Key features bullet list styling */
+#modal-key-features {
+    text-align: left;
+    margin: 20px auto;
+    max-width: 80%;
+}
+#modal-key-features li {
+    margin-bottom: 10px;
 }

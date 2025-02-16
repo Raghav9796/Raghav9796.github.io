@@ -151,36 +151,60 @@ function openModal(projectId) {
         "data-analytics": {
             title: "Data Analytics",
             description: "An advanced data analytics project involving predictive modeling.",
-            images: ["analytics1.jpg", "analytics2.jpg"]
+            images: ["analytics1.jpg", "analytics2.jpg"],
+            technologies: ["Python", "Pandas", "NumPy", "Matplotlib"],
+            features: ["Data cleaning", "Predictive modeling", "Interactive dashboards"]
         },
         "research-paper": {
             title: "Research Paper",
-            description: "A comparative study of Canny and Marr-Hildreth edge detection algorithms.",
-            images: ["paper1.jpg", "paper2.jpg"]
+            description: "A comparative study of edge detection algorithms.",
+            images: ["paper1.jpg", "paper2.jpg"],
+            technologies: ["MATLAB", "OpenCV", "LaTeX"],
+            features: ["Edge detection", "Performance evaluation", "Algorithm comparison"]
         },
         "data-viz": {
             title: "Data Visualization and Sonification",
-            description: "A project integrating visual and auditory representation of data using D3.js and Tone.js.",
-            images: ["viz1.jpg", "viz2.jpg"]
+            description: "A project integrating visual and auditory representation of data.",
+            images: ["viz1.jpg", "viz2.jpg"],
+            technologies: ["D3.js", "Tone.js", "JavaScript"],
+            features: ["Interactive charts", "Real-time sonification", "Responsive design"]
         },
         "personal-website": {
             title: "Personal Website",
             description: "My portfolio website showcasing my work in software engineering.",
-            images: ["website1.jpg", "website2.jpg"]
+            images: ["website1.jpg", "website2.jpg"],
+            technologies: ["HTML", "CSS", "JavaScript"],
+            features: ["Responsive layout", "Animated effects", "Interactive elements"]
         }
     };
 
     const project = projectDetails[projectId];
     if (project) {
-        // Populate modal content
+        // Set title
         document.getElementById('modal-title').innerText = project.title;
-        document.getElementById('modal-description').innerText = project.description;
+
+        // Populate images section (assumes exactly two images)
         const imagesContainer = document.getElementById('modal-images');
         imagesContainer.innerHTML = project.images.map(img =>
-            `<img src="${img}" alt="${project.title}" style="max-width: 100%; margin: 10px; border-radius: 8px;">`
+            `<img src="${img}" alt="${project.title}" class="modal-image">`
         ).join('');
 
-        // Display modal
+        // Set description
+        document.getElementById('modal-description').innerText = project.description;
+
+        // Populate technologies bubbles
+        const techContainer = document.getElementById('modal-technologies');
+        techContainer.innerHTML = project.technologies.map(tech =>
+            `<span class="tech-bubble">${tech}</span>`
+        ).join(' ');
+
+        // Populate key features list
+        const featuresContainer = document.getElementById('modal-key-features');
+        featuresContainer.innerHTML = project.features.map(feature =>
+            `<li>${feature}</li>`
+        ).join('');
+
+        // Display the modal
         document.getElementById('modal').style.display = 'block';
     }
 }
@@ -189,11 +213,9 @@ function closeModal() {
     document.getElementById('modal').style.display = 'none';
 }
 
-// Close modal when clicking the close button
+// Setup event listeners to close the modal
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelector('.close-button').addEventListener('click', closeModal);
-
-    // Close modal when clicking outside the modal content
     window.addEventListener('click', (event) => {
         const modal = document.getElementById('modal');
         if (event.target === modal) {
