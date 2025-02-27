@@ -7,9 +7,77 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js" defer></script>
+    <style>
+        /* Construction Popup Styles */
+        #construction-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            text-align: center;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #construction-popup .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            color: #ff9800;
+        }
+
+        #construction-popup h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        #construction-popup p {
+            margin: 0 0 15px 0;
+            color: #666;
+        }
+
+        #construction-popup button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #construction-popup button:hover {
+            background-color: #45a049;
+        }
+
+        #popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+    </style>
 </head>
 <body>
 <div id="particles-js"></div>
+
+<!-- Construction Popup -->
+<div id="popup-overlay"></div>
+<div id="construction-popup">
+    <div class="icon">🚧</div>
+    <h3>Website Under Construction</h3>
+    <p>Thank you for visiting! This site is currently being built and improved. Some features may not be fully functional yet.</p>
+    <button id="close-popup">Continue to Site</button>
+</div>
 
 <header>
     <h1>Raghav Poddar</h1>
@@ -84,5 +152,24 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Construction popup functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const popup = document.getElementById('construction-popup');
+        const overlay = document.getElementById('popup-overlay');
+        const closeButton = document.getElementById('close-popup');
+
+        // Show popup when page loads
+        popup.style.display = 'flex';
+        overlay.style.display = 'block';
+
+        // Close popup when button is clicked
+        closeButton.addEventListener('click', function() {
+            popup.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    });
+</script>
 </body>
 </html>
